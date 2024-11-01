@@ -1,4 +1,5 @@
 let map;
+import { MarkerClusterer } from "@googlemaps/markerclusterer";
 async function initMap(){
     
     const { Map } = await google.maps.importLibrary("maps");
@@ -114,6 +115,7 @@ async function initMap(){
             id: i
             
         })*/
+       const mC = new MarkerClusterer(map, markers);
         function createInfoWindows() {
             const infoWindowContent = `
             <div class="info-window">
